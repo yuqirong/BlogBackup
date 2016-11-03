@@ -1,4 +1,4 @@
-title: 关于Android 6.0的运行时权限处理
+title: 关于Android M的运行时权限处理
 date: 2016-06-08 22:12:20
 categories: Android Blog
 tags: [Android]
