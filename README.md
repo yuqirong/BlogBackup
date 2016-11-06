@@ -8,6 +8,7 @@
 11月
 ------------
 * 11-06 [热修复框架HotFix源码解析](/blog/热修复框架HotFix源码解析.md)
+* 11-03 [React Native热更新集成CodePush](/blog/React Native热更新集成CodePush.md)
 
 10月
 ------------
