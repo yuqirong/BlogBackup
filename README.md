@@ -113,19 +113,15 @@
 博客原创文章使用 [署名-非商业性使用-相同方式共享 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议发布，转载请标注作者和文章链接，不得用于商业目的。
 
 ## 打赏我吧
-<div id="QR" style="display: block;text-align: center;margin:0px auto">
-<div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-<div id="wechat" style="display: inline-block">
-<a href="/uploads/avatar/20161001102756.png" class="fancybox" rel="group"><img id="wechat_qr" src="/uploads/profile/20161001102756.png" alt="俞其荣 WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"></a>
-<p>微信打赏</p>
-</div>
+坚持原创技术分享，您的支持将鼓励我继续创作！
 
-<div id="alipay" style="display: inline-block">
-<a href="/uploads/avatar/20160428221107.jpg" class="fancybox" rel="group"><img id="alipay_qr" src="/uploads/profile/20160428221107.jpg" alt="俞其荣 Alipay" style="width: 200px; max-width: 100%; display: inline-block"></a>
-<p>支付宝打赏</p>
-</div>
+![微信支付](uploads/profile/20161001102756.png)
 
-</div>
+微信打赏
+
+![支付宝支付](uploads/profile/20160428221107.jpg)
+
+支付宝打赏
 
 ## 关于我
 * [Blog](http://yuqirong.me)
