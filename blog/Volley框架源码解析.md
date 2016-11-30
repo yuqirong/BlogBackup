@@ -917,7 +917,7 @@ public interface ResponseDelivery {
 
 ResponseDelivery 的接口就定义了三个方法，我们需要在其实现类中看看具体的实现：
 
-```
+``` java
 public class ExecutorDelivery implements ResponseDelivery {
     /** 用来分发 Response , 一般都是在主线程中*/
     private final Executor mResponsePoster;
