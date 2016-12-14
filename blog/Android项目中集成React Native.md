@@ -288,8 +288,7 @@ java.lang.IllegalAccessError: Method 'void android.support.v4.net.ConnectivityMa
 
 解决方案：修改依赖为 `com.android.support:appcompat-v7:23.0.1` ，详见 [Android java.lang.IllegalAccessError Method void android.support.v4.net.ConnectivityManagerCompat](https://github.com/facebook/react-native/issues/6152)
 
-ERROR  EPERM: operation not permitted, lstat 'C:\Users\Administrator\Desktop\ReactNativeUpdate\app\build\generated\assets\shaders\debug'
-{"errno":-4048,"code":"EPERM","syscall":"lstat","path":"C:\\Users\\Administrator\\Desktop\\ReactNativeUpdate\\app\\build\\generated\\assets\\shaders\\debug"}Error: EPERM: operation not permitted, lstat 'C:\Users\Administrator\Desktop\ReactNativeUpdate\app\build\generated\assets\shaders\debug' at Error (native)
+ERROR  EPERM: operation not permitted, lstat 'C:\Users\Administrator\Desktop\ReactNativeUpdate\app\build\generated\assets\shaders\debug' {"errno":-4048,"code":"EPERM","syscall":"lstat","path":"C:\\Users\\Administrator\\Desktop\\ReactNativeUpdate\\app\\build\\generated\\assets\\shaders\\debug"}Error: EPERM: operation not permitted, lstat 'C:\Users\Administrator\Desktop\ReactNativeUpdate\app\build\generated\assets\shaders\debug' at Error (native)
 ---------------------------------------------------------------
 在调用命令 `npm start` 时，出现以下错误：
 
