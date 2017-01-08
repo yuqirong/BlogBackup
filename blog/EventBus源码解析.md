@@ -131,7 +131,7 @@ EventBus(EventBusBuilder builder) {
 }
 ```
 
-从上面的源码中可以看出，平时的我们经常调用的 `EventBus.getDefault()` 代码，其实是获取了 `Event` 类的单例。若该单例未实例化，那么会根据 `DEFAULT_BUILDER` 采用构造者模式去实例化该单例。在 `EventBus` 构造器中初始化了一堆的成员变量，这些都会在下面中使用到。
+从上面的源码中可以看出，平时的我们经常调用的 `EventBus.getDefault()` 代码，其实是获取了 `EventBus` 类的单例。若该单例未实例化，那么会根据 `DEFAULT_BUILDER` 采用构造者模式去实例化该单例。在 `EventBus` 构造器中初始化了一堆的成员变量，这些都会在下面中使用到。
 
 register(Object subscriber)
 ---------------------------
