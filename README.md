@@ -7,6 +7,7 @@
 ======
 01月
 ----
+* 01-21 [关于使用AlarmManager的注意事项](/blog/关于使用AlarmManager的注意事项.md)
 * 01-14 [Say Hello To 2017](/blog/Say Hello To 2017.md)
 
 2016年
