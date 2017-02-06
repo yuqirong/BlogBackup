@@ -157,3 +157,5 @@ public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHol
 ![改进效果图](/uploads/20170206/20170203223341.gif)
 
 今天就这样吧，拜拜啦！！
+
+源码下载：[TestRV.rar](/uploads/20170206/TestRV.rar)
