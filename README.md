@@ -7,6 +7,7 @@
 ======
 02月
 ----
+* 02-09 [NotificationListenerService的那些事儿](/blog/NotificationListenerService的那些事儿.md)
 * 02-03 [RecyclerView实现拖拽排序和侧滑删除](/blog/RecyclerView实现拖拽排序和侧滑删除.md)
 
 01月
