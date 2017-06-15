@@ -179,15 +179,15 @@ val x: IntArray = intArrayOf(1, 2, 3)
 	``` kotlin
 	fun main(args: Array<String>) {
 	    val a = 101
-		val b: Boolean = if(a > 100){
-			print("a > 100 ")
-			true
-			}else{
-			print("a <= 100 ")
-			false
-			}
+	    val b: Boolean = if(a > 100){
+		    print("a > 100 ")
+		    true
+		    }else{
+		    print("a <= 100 ")
+		    false
+		    }
 	    println(b)
-		val c: Boolean = if(a > 0) true else false
+	    val c: Boolean = if(a > 0) true else false
 	}
 	```
 
