@@ -1,17 +1,17 @@
-title: 一起来写OKHttp的拦截器
+title: 一起来写OkHttp的拦截器
 date: 2017-06-25 12:37:02
 categories: Android Blog
 tags: [Android,开源框架]
 ---
 00:00
 ======
-一开始就不多说废话了，主要因为工作时遇到了一些使用 OKHttp 拦截器的问题，所以在此特写这篇以作记录。
+一开始就不多说废话了，主要因为工作时遇到了一些使用 OkHttp 拦截器的问题，所以在此特写这篇以作记录。
 
 现如今，做 Android 开发在选择网络框架时，大多数都会首推 Retrofit 。Retrofit 以其简洁优雅的代码俘获了大多数开发者的心。
 
-然而 Retrofit 内部请求也是基于 OKHttp 的，所以在做一些自定义修改 HTTP 请求时，需要对 OKHttp 拦截器具有一定了解。相信熟悉 OKHttp 的同学都知道，OKHttp 内部是使用拦截器来完成请求和响应的，利用的是责任链设计模式。所以可以说，拦截器是 OKHttp 的精髓所在。
+然而 Retrofit 内部请求也是基于 OkHttp 的，所以在做一些自定义修改 HTTP 请求时，需要对 OkHttp 拦截器具有一定了解。相信熟悉 OkHttp 的同学都知道，OkHttp 内部是使用拦截器来完成请求和响应的，利用的是责任链设计模式。所以可以说，拦截器是 OkHttp 的精髓所在。
 
-那么接下来，我们就通过一些例子来学习怎样编写 OKHttp 的拦截器吧，其实这些例子也正是之前我遇到的情景。
+那么接下来，我们就通过一些例子来学习怎样编写 OkHttp 的拦截器吧，其实这些例子也正是之前我遇到的情景。
 
 00:01
 =====
@@ -53,7 +53,7 @@ public class TokenHeaderInterceptor implements Interceptor {
 
 我们先拦截得到 originalRequest ，然后利用 originalRequest 生成新的 updateRequest ，再交给 chain 处理进行下一环。
 
-最后，在 OKHttpClient 中使用：
+最后，在 OkHttpClient 中使用：
 
 ``` java
 OkHttpClient client = new OkHttpClient.Builder()
@@ -121,7 +121,7 @@ public class RequestEncryptInterceptor implements Interceptor {
 
 代码中已经添加了关键的注释，相信我已经不需要多解释什么了。
 
-经过了这两种拦截器，相信同学们已经充分体会到了 OKHttp 的优点和与众不同。
+经过了这两种拦截器，相信同学们已经充分体会到了 OkHttp 的优点和与众不同。
 
 最后，自定义拦截器的使用情景通常是对所有网络请求作统一处理。如果下次你也碰到这种类似的需求，别忘记使用自定义拦截器哦！
 
