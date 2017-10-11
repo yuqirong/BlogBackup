@@ -5,8 +5,13 @@
 
 2017年
 ======
+10月
+----
+* 10-08 [Window源码解析(二)：Window的添加机制](/blog/Window源码解析(二)：Window的添加机制.md)
+
 09月
 ----
+* 09-28 [Window源码解析(一)：与DecorView的那些事](/blog/Window源码解析(一)：与DecorView的那些事.md)
 * 09-18 [View的工作原理](/blog/View的工作原理.md)
 
 08月
