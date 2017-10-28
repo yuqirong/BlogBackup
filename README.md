@@ -7,6 +7,7 @@
 ======
 10月
 ----
+* 10-23 [Window源码解析(四)：Window的删除机制](/blog/Window源码解析(四)：Window的删除机制.md)
 * 10-10 [Window源码解析(三)：Window的更新机制](/blog/Window源码解析(三)：Window的更新机制.md)
 * 10-08 [Window源码解析(二)：Window的添加机制](/blog/Window源码解析(二)：Window的添加机制.md)
 
