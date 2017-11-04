@@ -403,7 +403,7 @@ ViewGroup
 
 mFirstTouchTarget 不为空的话，代码里处理的都是除了 ACTION\_DOWN 的事件，也就是 ACTION\_MOVE 和 ACTION\_UP 事件。若 alreadyDispatchedToNewTouchTarget 为 true ，那么这正是上面给 mFirstTouchTarget 赋值时留下来的“锅”，直接返回 handled = true 即可。
 
-否则就直接将事件分发给子 View 了。这里注意下，若 cancelChild 为 true 的话，就代表着事件被 ViewGroup 拦截了，所以分发给子 View 的是 ACTION\_CANCEL 事件，之后又把 mFirstTouchTarget 置空了。并且随着 while 循环，target.child 被置为 null 后，调用的就是 ViewGroup 的 `super.dispatchTouchEvent(event)` ，就完成了把事件分发给 ViewGroup 了。
+否则就直接将事件分发给子 View 了。这里注意下，若 cancelChild 为 true 的话，就代表着事件被 ViewGroup 拦截了，所以分发给子 View 的将是 ACTION\_CANCEL 事件，之后把 mFirstTouchTarget 置空了。那么之后事件再过来，调用的就是 ViewGroup 的 `super.dispatchTouchEvent(event)` ，就完成了把事件分发给 ViewGroup 了。
 
 这样，以后的事件就完全移交给 ViewGroup 了，没子 View 什么事了。
 
