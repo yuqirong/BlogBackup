@@ -3,10 +3,17 @@
 
 想要了解更多，请点击进入我的博客：[Qirong Yu's Blog](http://yuqirong.me)
 
+2018年
+======
+1月
+----
+* 01-13 [HashMap内部原理解析](/blog/HashMap内部原理解析.md)
+
 2017年
 ======
 12月
 ----
+* 12-21 [Android通过URI获取文件路径](/blog/Android通过URI获取文件路径.md)
 * 12-02 [Vue.js模板方法](/blog/Vue.js模板方法.md)
 * 12-01 [Vue.js安装教程](/blog/Vue.js安装教程.md)
 
