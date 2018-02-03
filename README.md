@@ -7,6 +7,8 @@
 ======
 1月
 ----
+* 01-31 [LinkedList内部原理解析](/blog/LinkedList内部原理解析.md)
+* 01-28 [HashSet内部原理解析](/blog/HashSet内部原理解析.md)
 * 01-21 [ArrayList内部原理解析](/blog/ArrayList内部原理解析.md)
 * 01-13 [HashMap内部原理解析](/blog/HashMap内部原理解析.md)
 
