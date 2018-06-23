@@ -5,6 +5,10 @@
 
 2018年
 ======
+6月
+----
+* 06-24 [Android Architecture Component之LiveData解析](/blog/Android_Architecture_Component之LiveData解析.md)
+
 5月
 ----
 * 05-30 [Android Data Binding入门](/blog/Android_Data_Binding入门.md)
