@@ -7,6 +7,7 @@
 ======
 7月
 ----
+* 07-15 [Android Architecture Component之Lifecycle解析](/blog/Android_Architecture_Component之Lifecycle解析.md)
 * 07-10 [Android Architecture Component之ViewModel解析](/blog/Android_Architecture_Component之ViewModel解析.md)
 
 6月
