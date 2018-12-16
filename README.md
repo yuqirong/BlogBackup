@@ -5,8 +5,14 @@
 
 2018年
 ======
+11月
+----
+* 11-15 [从SVN迁移到GitLab](/blog/从SVN迁移到GitLab.md)
+* 11-13 [Linux上安装GitLab和Jenkins](/blog/Linux上安装GitLab和Jenkins.md)
+
 7月
 ----
+* 07-22 [ActivityRouter源码解析](/blog/ActivityRouter源码解析.md)
 * 07-15 [Android Architecture Component之Lifecycle解析](/blog/Android_Architecture_Component之Lifecycle解析.md)
 * 07-10 [Android Architecture Component之ViewModel解析](/blog/Android_Architecture_Component之ViewModel解析.md)
 
@@ -219,3 +225,5 @@
 * [微博](http://weibo.com/yyyuqirong)
 * [知乎](https://www.zhihu.com/people/yuqirong)
 * [Email](<yqr271228943@gmail.com>)
+
+
