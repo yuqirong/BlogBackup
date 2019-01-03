@@ -17,7 +17,7 @@ arouter-api version : 1.4.1
 
 1. 对 IRouteRoot 页面跳转进行源码解析；
 2. 对 IInterceptorGroup 拦截器进行源码解析；
-3. 对 IProviderGroup 服务组件进行源码解析；
+3. 对 @Autowired 自动注入进行源码解析；
 
 本篇是 ARouter 系列的第一篇，下面就对 IRouteRoot 页面跳转进行详细解析。
 

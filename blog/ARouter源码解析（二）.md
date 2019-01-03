@@ -214,7 +214,7 @@ public void doInterceptions(final Postcard postcard, final InterceptorCallback c
                CancelableCountDownLatch interceptorCounter = new CancelableCountDownLatch(Warehouse.interceptors.size());
                try {
                    _excute(0, interceptorCounter, postcard);
-                   // 设置超时时间 默认300s
+                   // 阻塞线程直到计数归0或者超时；超时时间 默认300s
                    interceptorCounter.await(postcard.getTimeout(), TimeUnit.SECONDS);
                    if (interceptorCounter.getCount() > 0) {    // 如果 count 大于 0 说明是拦截器超时
                        callback.onInterrupt(new HandlerException("The interceptor processing timed out."));
