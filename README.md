@@ -7,6 +7,7 @@
 ======
 1月
 ----
+* 01-05 [ARouter源码解析（四）](/blog/ARouter源码解析（四）.md)
 * 01-03 [ARouter源码解析（三）](/blog/ARouter源码解析（三）.md)
 * 01-02 [ARouter源码解析（二）](/blog/ARouter源码解析（二）.md)
 
