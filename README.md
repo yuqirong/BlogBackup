@@ -7,6 +7,7 @@
 ======
 1月
 ----
+* 01-13 [使用OpenCV对图片进行二值化和去燥处理](/blog/使用OpenCV对图片进行二值化和去燥处理.md)
 * 01-10 [ARouter源码解析（五）](/blog/ARouter源码解析（五）.md)
 * 01-05 [ARouter源码解析（四）](/blog/ARouter源码解析（四）.md)
 * 01-03 [ARouter源码解析（三）](/blog/ARouter源码解析（三）.md)
