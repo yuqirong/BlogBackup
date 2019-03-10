@@ -3,6 +3,8 @@ date: 2019-02-24 22:52:16
 categories: Android Blog
 tags: [Android,开源框架,源码解析,Tinker,热修复]
 ---
+本系列 Tinker 源码解析基于 Tinker v1.9.12
+
 自动生成TinkerApplication
 ========================
 接入 Tinker 第一步就是改造 Application 。官方推荐是利用 @DefaultLifeCycle 动态生成 Application

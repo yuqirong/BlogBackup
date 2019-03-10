@@ -3,6 +3,8 @@ date: 2019-02-27 21:43:16
 categories: Android Blog
 tags: [Android,开源框架,源码解析,Tinker,热修复]
 ---
+本系列 Tinker 源码解析基于 Tinker v1.9.12
+
 前一篇讲到了利用反射执行的是 TinkerLoader.tryLoad 方法
 
 tryLoad
@@ -71,7 +73,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 	
-检查 patch.info 文件是否存在
+检查 patch.info 文件是否存在, patch.info 是补丁信息文件，里面记录着新旧两个补丁版本的 md5 值
 	
 ``` java
 	// 文件目录 /data/data/tinker.sample.android/tinker/patch.info
@@ -86,7 +88,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 	
-读取 patch.info 文件，并包装成一个 SharePatchInfo ，并检查 patchInfo 是否为空 (先加锁再解锁)
+读取 patch.info 文件，并包装成一个 SharePatchInfo ，并检查 patchInfo 是否为空 (先加锁 file lock 再解锁)
 	
 ``` java
 	//old = 641e634c5b8f1649c75caf73794acbdf
@@ -117,7 +119,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 	
-如果发现 patchInfo 中的 isRemoveNewVersion 为 true 并且在主进程中运行的话，就代表需要清理新的补丁文件夹了
+如果发现 patchInfo 中的 isRemoveNewVersion 为 true 并且在主进程中运行的话，就代表需要清除补丁了
 	
 ``` java
 	boolean mainProcess = ShareTinkerInternals.isInMainProcess(app);
@@ -175,7 +177,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 
-检查当前版本补丁文件夹是否存在
+检查当前新版本补丁文件夹是否存在
 
 ``` java
 	//patch-641e634c
@@ -214,11 +216,15 @@ tryLoadPatchFilesInternal
 	}
 ```
 
-检查补丁文件签名以及补丁文件中的 tinker id 和基准包的 tinker id 是否一致
+检查补丁文件签名以及补丁文件中的 tinker id 和基准包的 tinker id 是否一致。
+
+注意，这里补丁文件的 tinker id 是当前补丁基准包的 tinker id ，也就是有 bug 的基准包 tinker id 。另外一个 new tinker id 是补丁加载完成后的 tinker id ，就是 bug 修复后的 tinker id 。
 
 ``` java
 	ShareSecurityCheck securityCheck = new ShareSecurityCheck(app);
-	
+	// 1. 检查补丁包 apk 的签名
+	// 2. 检查基准包的 tinker id 与补丁包中是否一致
+	// 3. 检查 tinker 设置与补丁包中的类型是否符合
 	int returnCode = ShareTinkerInternals.checkTinkerPackage(app, tinkerFlag, patchVersionFile, securityCheck);
 	if (returnCode != ShareConstants.ERROR_PACKAGE_CHECK_OK) {
 	    Log.w(TAG, "tryLoadPatchFiles:checkTinkerPackage");
@@ -228,8 +234,11 @@ tryLoadPatchFilesInternal
 	}
 
 	resultIntent.putExtra(ShareIntentUtil.INTENT_PATCH_PACKAGE_CONFIG, securityCheck.getPackagePropertiesIfPresent());
+```
 
+下面是 checkTinkerPackage 方法的具体代码
 
+``` java
 	public static int checkTinkerPackage(Context context, int tinkerFlag, File patchFile, ShareSecurityCheck securityCheck) {
 	    // 检查补丁文件签名和 tinker id 是否一致
 	    // 这里为了快速校验,就只检验补丁包内部以meta.txt结尾的文件的签名，而其他的文件的合法性则通过meta.txt文件内部记录的补丁文件Md5值来校验
@@ -246,9 +255,9 @@ tryLoadPatchFilesInternal
 根据不同的情况,最多有四个文件是以meta.txt结尾的:
 
 * package_meta.txt 补丁包的基本信息
-* dex_meta.txt 所有dex文件的信息
-* so_meta.txt 所有so文件的信息
-* res_meta.txt 所有资源文件的信息
+* dex_meta.txt dex补丁的信息
+* so_meta.txt so补丁的信息
+* res_meta.txt 资源补丁的信息
 
 
 如果开启了支持 dex 热修复，检查 dex_meta.txt 文件中记录的dex文件信息对应的dex文件是否存在
@@ -300,7 +309,9 @@ tryLoadPatchFilesInternal
 	}
 ```
 	
-符合条件的话就更新版本信息,并将最新的patch info更新入文件.在v1.7.5的版本开始有了isSystemOTA判断,只要用户是ART环境并且做了OTA升级则在加载dex补丁的时候就会先把最近一次的补丁全部DexFile.loadDex一遍重新生成odex.再加载dex补丁
+符合条件的话就更新版本信息,并将最新的patch info更新入文件.在v1.7.5的版本开始有了isSystemOTA判断,
+
+只要用户是ART环境并且做了OTA升级，则在加载dex补丁的时候就会先把最近一次的补丁全部DexFile.loadDex一遍重新生成odex，再加载dex补丁。否则会报错
 	
 ``` java
 	//only work for art platform oat，because of interpret, refuse 4.4 art oat
@@ -312,6 +323,7 @@ tryLoadPatchFilesInternal
 	resultIntent.putExtra(ShareIntentUtil.INTENT_PATCH_SYSTEM_OTA, isSystemOTA);
 	
 	//we should first try rewrite patch info file, if there is a error, we can't load jar
+	// 把patch.info的旧版本的值更新为新版本的值，写入 patch.info 中
 	if (mainProcess && (versionChanged || oatModeChanged)) {
 	    patchInfo.oldVersion = version;
 	    patchInfo.oatDir = oatDex;
@@ -346,13 +358,13 @@ tryLoadPatchFilesInternal
 	}
 ```
 
-加载补丁 jar
+加载补丁 jar ，这一部分的代码我们后面会详细展开
 
 ``` java
 	//now we can load patch jar
 	if (isEnabledForDex) {
 	    boolean loadTinkerJars = TinkerDexLoader.loadTinkerJars(app, patchVersionDirectory, oatDex, resultIntent, isSystemOTA);
-	
+	    // 如果是 ota 的话，更新 oat 的文件夹路径
 	    if (isSystemOTA) {
 	        // update fingerprint after load success
 	        patchInfo.fingerPrint = Build.FINGERPRINT;
@@ -375,7 +387,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 	
-加载补丁资源
+加载补丁资源，这一部分的代码我们后面会详细展开
 
 ``` java
 	//now we can load patch resource
@@ -388,7 +400,7 @@ tryLoadPatchFilesInternal
 	}
 ```
 
-结束
+补丁加载流程结束
 
 ``` java
 	// Init component hotplug support.

@@ -3,6 +3,8 @@ date: 2019-02-28 19:23:19
 categories: Android Blog
 tags: [Android,开源框架,源码解析,Tinker,热修复]
 ---
+本系列 Tinker 源码解析基于 Tinker v1.9.12
+
 加载dex补丁流程
 =============
 
@@ -318,5 +320,6 @@ SystemClassLoaderAdder.installDexes
 
 具体的内容就是把 dexElements 中的头部 element 去除了。
 
+到这，dex 补丁加载的流程结束了。
 
 
