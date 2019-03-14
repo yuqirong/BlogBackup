@@ -1,4 +1,4 @@
-title: Tinker源码分析(二):加载补丁
+title: Tinker源码分析(二):加载补丁流程
 date: 2019-02-27 21:43:16
 categories: Android Blog
 tags: [Android,开源框架,源码解析,Tinker,热修复]
