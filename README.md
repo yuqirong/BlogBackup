@@ -7,6 +7,8 @@
 ======
 3月
 ----
+* 03-20 [Tinker源码分析(七):dex合成流程](/blog/Tinker源码分析(七).md)
+* 03-18 [Apk安全之校验签名](/blog/Apk安全之校验签名.md)
 * 03-14 [Tinker源码分析(六):补丁合成流程](/blog/Tinker源码分析(六).md)
 * 03-10 [Tinker源码分析(五):加载so补丁流程](/blog/Tinker源码分析(五).md)
 * 03-05 [Tinker源码分析(四):加载资源补丁流程](/blog/Tinker源码分析(四).md)
