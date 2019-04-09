@@ -5,6 +5,9 @@
 
 2019年
 ======
+4月
+----
+* 04-03 [startActivity启动流程](/blog/startActivity启动流程.md)
 3月
 ----
 * 03-20 [Tinker源码分析(七):dex合成流程](/blog/Tinker源码分析(七).md)
