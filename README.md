@@ -7,6 +7,7 @@
 ======
 4月
 ----
+* 04-09 [Activity生命周期调用流程](/blog/Activity生命周期调用流程.md)
 * 04-03 [startActivity启动流程](/blog/startActivity启动流程.md)
 
 3月
