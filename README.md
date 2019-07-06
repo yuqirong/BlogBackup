@@ -5,6 +5,18 @@
 
 2019年
 ======
+7月
+----
+* 07-06 [LeakCanary源码解析](/blog/LeakCanary源码解析.md)
+
+6月
+----
+* 06-28 [闲谈Android中的内存泄漏](/blog/闲谈Android中的内存泄漏.md)
+
+5月
+----
+* 05-21 [深入理解Binder](/blog/深入理解Binder.md)
+
 4月
 ----
 * 04-09 [Activity生命周期调用流程](/blog/Activity生命周期调用流程.md)
