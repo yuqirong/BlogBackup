@@ -7,6 +7,7 @@
 ======
 7月
 ----
+* 07-09 [闲聊MultiDex](/blog/闲聊MultiDex.md)
 * 07-06 [LeakCanary源码解析](/blog/LeakCanary源码解析.md)
 
 6月
@@ -70,6 +71,10 @@
 ----
 * 05-30 [Android Data Binding入门](/blog/Android_Data_Binding入门.md)
 
+4月
+----
+* 04-01 [记自己2018年三月份的面试经历](/blog/记自己2018年三月份的面试经历.md)
+
 3月
 ----
 * 03-03 [HTTPS加密原理](/blog/HTTPS加密原理.md)
@@ -88,6 +93,10 @@
 * 12-21 [Android通过URI获取文件路径](/blog/Android通过URI获取文件路径.md)
 * 12-02 [Vue.js模板方法](/blog/Vue.js模板方法.md)
 * 12-01 [Vue.js安装教程](/blog/Vue.js安装教程.md)
+
+11月
+----
+* 11-12 [VirtualAPK源码解析](/blog/VirtualAPK源码解析.md)
 
 10月
 ----
@@ -271,6 +280,8 @@
 * [微博](http://weibo.com/yyyuqirong)
 * [知乎](https://www.zhihu.com/people/yuqirong)
 * [Email](<yqr271228943@gmail.com>)
+
+
 
 
 
